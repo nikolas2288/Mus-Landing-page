@@ -6,6 +6,7 @@ class Account {
         $this->con = $con;
         $this->arrayErr = array();
     }
+    
     public function register($un, $fn, $ln, $em, $pw, $pw2){
         $this->validateUserName($un);
         $this->validateFirstName($fn);
@@ -30,10 +31,18 @@ class Account {
 
     private function insertUserDetails($un, $fn, $ln, $em, $pw){
         $encryptedPw = md5($pw);
-        $profilePic = "assets/images/profile-picck.png";
+        $profilePic = "assests/img/profile-pick/profile.png";
         $date = date("Y-m-d");
 
-        $result = mysqli_query($this->con, "INSERT INFO users VALUES('', '$un','$fn', '$ln','$em', '$encryptedPw','$date','$profilePic')");
+        $result = mysqli_query($this->con, "INSERT INFO users VALUES(
+            '', 
+            '$un', 
+            '$fn', 
+            '$ln',
+            '$em', 
+            '$encryptedPw', 
+            '$date', 
+            '$profilePic')");
         return $result;
     }
 
