@@ -33,7 +33,7 @@ class Account {
         $profilePic = "assets/images/profile-picck.png";
         $date = date("Y-m-d");
 
-        $result = mysqli_query($this->con, "INSERT INFO users VALUES('', '$un','$fn', '$ln','$em', '$encryptedPw','$data','$profilePic')");
+        $result = mysqli_query($this->con, "INSERT INFO users VALUES('', '$un','$fn', '$ln','$em', '$encryptedPw','$date','$profilePic')");
         return $result;
     }
 
