@@ -2,6 +2,7 @@
 class Account {
     private $con;
     private $arrayErr;
+
     public function __construct($con){
         $this->con = $con;
         $this->arrayErr = array();
@@ -34,15 +35,7 @@ class Account {
         $profilePic = "assests/img/profile-pick/profile.png";
         $date = date("Y-m-d");
 
-        $result = mysqli_query($this->con, "INSERT INFO users VALUES(
-            '', 
-            '$un', 
-            '$fn', 
-            '$ln',
-            '$em', 
-            '$encryptedPw', 
-            '$date', 
-            '$profilePic')");
+        $result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$encryptedPw', '$date', '$profilePic')");
         return $result;
     }
 

@@ -56,14 +56,14 @@ function getInputValue($name) {
             </p>
             <p>
                 <label for="regPassword">Password</label>
-                <input id="regPassword" name="regPassword" type="password" requared>
+                <input id="regPassword" name="regPassword" type="password" /*value="asdasdasd2"*/ requared>
                 <?php echo $account->getError(Constant::$passwordDoNotMuch); ?>
                 <?php echo $account->getError(Constant::$passwordContain); ?>
                 <?php echo $account->getError(Constant::$passwordCharacter); ?>
             </p>
             <p>
                 <label for="regPassword2">Confirm Password</label>
-                <input id="regPassword2" name="regPassword2" type="password" requared>
+                <input id="regPassword2" name="regPassword2" type="password" /*value="asdasdasd2"*/ requared>
             </p>
             <button type="submit" name="regButton">SIGN UP</button>
         </form>
