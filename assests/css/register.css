@@ -1,0 +1,14 @@
+#background {
+  /* background-color: #000; */
+  /* background-image: url(../img/wallpaper.jpg); */
+  /* background-position: center; */
+  /* background-size: cover; */
+  /* display: table; */
+  /* height: 100%;
+  width: 100%; */
+  background: url(../img/wallpaper.jpg) no-repeat;
+  -moz-background-size: 100%; /* Firefox 3.6+ */
+  -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+  -o-background-size: 100%; /* Opera 9.6+ */
+  background-size: 100%; /* Современные браузеры */
+}

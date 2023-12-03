@@ -7,6 +7,18 @@ class Account {
         $this->con = $con;
         $this->arrayErr = array();
     }
+
+    public function login($un, $pw){
+        $pw = md5($pw);
+        $query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$un' AND password='$pw'");
+        if (mysqli_num_rows($query) == 1) {
+            return true;
+        }
+        else {
+            array_push($this->arrayErr, Constant::$loginFailed);
+            return false;
+        }
+    }
     
     public function register($un, $fn, $ln, $em, $pw, $pw2){
         $this->validateUserName($un);
@@ -25,12 +37,12 @@ class Account {
 
     public function getError($error){
         if (!in_array($error, $this->arrayErr)) {
-            $error = "";
-        }
-        return "<span class='errorMessage'>$error</span>";
+                $error = "";
+            }
+            return "<span class='errorMessage'>$error</span>";
     }
 
-    private function insertUserDetails($un, $fn, $ln, $em, $pw){
+    private function insertUserDetails($un, $fn, $ln, $em, $pw) {
         $encryptedPw = md5($pw);
         $profilePic = "assests/img/profile-pick/profile.png";
         $date = date("Y-m-d");
@@ -43,6 +55,11 @@ class Account {
        if(strlen($un) > 25 || strlen($un) < 5) {
             array_push($this->arrayErr, Constant::$usernameDoNotMuch);
             return;
+       }
+       $checkUsernameQuery = mysqli_query($this->con, "SELECT username FROM users WHERE username='$un'");
+       if (mysqli_num_rows($checkUsernameQuery) != 0) {
+        array_push($this->arrayErr, Constant::$usernameTaken);
+        return;
        }
     }
     private function validateFirstName($fn) {
@@ -62,6 +79,11 @@ class Account {
             array_push($this->arrayErr, Constant::$emailDoNotMuch);
             return;
         }
+        $checkemailQuery = mysqli_query($this->con, "SELECT email FROM users WHERE email='$em'");
+       if (mysqli_num_rows($checkemailQuery) != 0) {
+        array_push($this->arrayErr, Constant::$emailTaken);
+        return;
+       }
     }
     private function validatePasswords($pw, $pw2) {
         if($pw != $pw2) {
