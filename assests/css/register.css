@@ -1,14 +1,76 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
 #background {
-  /* background-color: #000; */
-  /* background-image: url(../img/wallpaper.jpg); */
-  /* background-position: center; */
-  /* background-size: cover; */
-  /* display: table; */
-  /* height: 100%;
-  width: 100%; */
-  background: url(../img/wallpaper.jpg) no-repeat;
-  -moz-background-size: 100%; /* Firefox 3.6+ */
-  -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-  -o-background-size: 100%; /* Opera 9.6+ */
-  background-size: 100%; /* Современные браузеры */
+  background-color: #000;
+  background-image: url(../img/wallpaper.jpg);
+  background-position: center;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.loginContainer * {
+  font-family: "Akshar", Arial, Helvetica, sans-serif;
+  font-weight: 1em;
+  color: white;
+  box-sizing: border-box;
+}
+
+.loginContainer {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1024px;
+}
+
+#container {
+  width: 400px;
+  padding: 45px;
+  float: left;
+  border-right: 1px solid #999;
+}
+
+#container h2 {
+  text-align: center;
+}
+
+#container input[type="text"],
+#container input[type="email"],
+#container input[type="password"] {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  height: 27px;
+  line-height: 27px;
+  width: 100%;
+}
+
+#container label {
+  color: #a0a0a0;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+#container button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 250px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 20px auto;
+  height: 41px;
+  width: 100%;
+}
+
+#container button:hover {
+  cursor: pointer;
 }
