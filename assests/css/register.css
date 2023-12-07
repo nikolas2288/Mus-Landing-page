@@ -74,3 +74,51 @@ body {
 #container button:hover {
   cursor: pointer;
 }
+
+.hasAccountText span {
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.hasAccountText {
+  text-align: center;
+}
+
+#regForm,
+#loginForm {
+  display: none;
+}
+
+#loginText {
+  padding: 45px;
+  display: table-cell;
+}
+
+#loginText h1 {
+  color: #07d159;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+#loginText h2 {
+  margin: 35px 0;
+}
+
+#loginText ul {
+  padding: 0;
+}
+
+#loginText li {
+  font-size: 20px;
+  list-style-type: none;
+  padding: 5px 35px;
+  background: url(../img/icon/icons8-check-50.png) no-repeat 0 0;
+  background-size: 28px;
+}
+
+#container .errorMessage {
+  color: #07d159;
+  font-size: 13px;
+  margin-top: 15px;
+}

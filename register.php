@@ -25,12 +25,24 @@ function getInputValue($name) {
     <script src="assests/js/register.js"></script>
 </head>
 <body>
-    <script>
-        $(document).ready(function(){
-            $("#loginForm").show();         
-            $("#regForm").hide();
-        })
-    </script>
+    <?php 
+    if (isset($_POST['regButton'])) {
+        echo '<script>
+                $(document).ready(function(){
+                    $("#loginForm").hide();         
+                    $("#regForm").show();
+                })
+            </script>';
+    }
+    else {
+        echo '<script>
+                $(document).ready(function(){
+                    $("#loginForm").show();         
+                    $("#regForm").hide();
+                })
+            </script>';
+    }
+    ?>
     
     <div id="background">
         <div class="loginContainer">
@@ -39,7 +51,7 @@ function getInputValue($name) {
                     <h2>Login to youre account</h2>
                     <p>
                         <label for="loginUsername">Username</label>
-                        <input id="loginUsername" name="loginUsername" type="text" >
+                        <input id="loginUsername" name="loginUsername" type="text" value="<?php getInputValue('loginUsername'); ?>" >
                         <?php echo $account->getError(Constant::$loginFailed); ?>
                     </p>
                     <p>
@@ -48,9 +60,10 @@ function getInputValue($name) {
                     </p>
                     <button type="submit" name="loginButton">LOG IN</button>
                     <div class="hasAccountText">
-                        <span class="hideLogin">Don't have an account yet? Signup here.</span>
+                        <span id="hideLogin">Don't have an account yet? Signup here.</span>
                     </div>
                 </form>
+
                 <form action="register.php" id="regForm"  method="POST">
                     <h2>Create a new Account</h2>
                     <p>
@@ -88,9 +101,18 @@ function getInputValue($name) {
                     </p>
                     <button type="submit" name="regButton">SIGN UP</button>
                     <div class="hasAccountText">
-                        <span class="hideRegister">Already have an account? Log here.</span>
+                        <span id="hideRegister">Already have an account? Log here.</span>
                     </div>
                 </form>
+            </div>
+            <div id="loginText">
+                <h1>Get great music, right now</h1>
+                <h2>Listen to loads of songs for free</h2>
+                <ul>
+                    <li>Discover music you'll fall in love with</li>
+                    <li>Create youre own playlists</li>
+                    <li>Follow artists to keep up to date</li>
+                </ul>
             </div>
         </div>
     </div>
