@@ -1,0 +1,15 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#nowPlayingBarContainer {
+  width: 100%;
+  background-color: #282828;
+  bottom: 0;
+  position: fixed;
+  min-width: 620;
+  height: 100px;
+}
