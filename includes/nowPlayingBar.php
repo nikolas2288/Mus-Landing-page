@@ -14,15 +14,15 @@ $jsonArray = json_encode($resultArray);
         audioElement = new Audio();
         setTrack(currentPlaylist[0], currentPlaylist, true);   
         
-        $(".playbackBar .progressBar").mousedown(() => {
+        $(".playbackBar .progressBar").mousedown(function(){
             mouseDown = true
         });
-        $(".playbackBar .progressBar").mousemove((e) => {
+        $(".playbackBar .progressBar").mousemove(function(e){
             if (mouseDown == true) {
                 timeFromOffset(e, this)
             }
         });
-        $(".playbackBar .progressBar").mouseup((e) => {
+        $(".playbackBar .progressBar").mouseup(function(e){
             timeFromOffset(e, this)
         });
         $(document).mouseup(() => {
@@ -73,6 +73,7 @@ $jsonArray = json_encode($resultArray);
         $(".controlButton.pause").hide();
         audioElement.pause();
     };
+
 </script>
 
 <div id="nowPlayingBarContainer">
