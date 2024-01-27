@@ -8,10 +8,12 @@
             // echo $row['title'] . "<br>";
             
             echo "<div class='gridViewItem'>
-                    <img src='" . $row['atworkPatch'] . "'>
-                    <div class='gridViewInfo'>
-                    ". $row['title'] ."
-                    </div>
+                    <a href='album.php?id=" . $row['id'] . "'>
+                        <img src='" . $row['artworkPath'] . "'>
+                        <div class='gridViewInfo'>
+                        ". $row['title'] ."
+                        </div>
+                    </a>
             </div>";
         };
     ?>
